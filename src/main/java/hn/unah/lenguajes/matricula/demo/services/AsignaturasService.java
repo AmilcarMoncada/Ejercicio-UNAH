@@ -6,7 +6,7 @@ import hn.unah.lenguajes.matricula.demo.entities.Asignaturas;
 
 public interface AsignaturasService {
     
-    public Asignaturas creAsignaturas(Asignaturas asignaturas);
+    public Asignaturas crearAsignatura(Asignaturas asignaturas);
 
     public List<Asignaturas> obtenerAsignaturas();
 

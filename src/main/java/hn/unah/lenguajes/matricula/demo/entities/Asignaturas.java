@@ -2,6 +2,10 @@ package hn.unah.lenguajes.matricula.demo.entities;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -25,6 +29,7 @@ public class Asignaturas {
 
     private int uv;
 
+    @JsonIgnore
     @ManyToMany(mappedBy = "asignaturas")
     private List<Alumnos> alumnos;
 

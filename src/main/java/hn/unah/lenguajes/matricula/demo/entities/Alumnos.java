@@ -2,6 +2,10 @@ package hn.unah.lenguajes.matricula.demo.entities;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.Id;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -30,10 +34,12 @@ public class Alumnos {
 
     private String telefono;
 
+
     @ManyToOne
     @JoinColumn(name = "codigocarrera", referencedColumnName = "codigocarrera")
     private Carrera carrera;
 
+    @JsonBackReference
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name="alumno_asignatura",
     joinColumns = @JoinColumn(name="numerocuenta"),

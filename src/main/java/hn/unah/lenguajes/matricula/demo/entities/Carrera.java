@@ -1,6 +1,5 @@
 package hn.unah.lenguajes.matricula.demo.entities;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
@@ -26,6 +25,7 @@ public class Carrera {
     private String nombre;
 
     @OneToMany(mappedBy = "carrera", cascade = CascadeType.ALL)
-    private List<Alumnos> alumnos = new ArrayList<>();
+    private List<Alumnos> alumnos;
 
+    
 }
